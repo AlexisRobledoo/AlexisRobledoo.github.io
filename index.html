@@ -5,31 +5,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Alexis Robledo | Desarrollo web y datos</title>
   <meta name="description" content="Portfolio de Alexis Robledo, estudiante de la Tecnicatura en Programación (UGR, Rosario). Páginas web para comercios, dashboards y automatizaciones con Python.">
+  <meta name="theme-color" content="#0a0a0f">
 
-  <!-- Cómo se ve el link cuando lo compartís en WhatsApp, LinkedIn, etc. -->
+  <!-- Cómo se ve el link cuando lo compartís (WhatsApp, LinkedIn, etc.) -->
   <meta property="og:title" content="Alexis Robledo | Desarrollo web y datos">
   <meta property="og:description" content="Páginas web para comercios, dashboards y automatizaciones con Python.">
   <meta property="og:image" content="https://alexisrobledoo.github.io/img/dashboard.jpg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
+  <!-- Luz que sigue al mouse (solo decoración) -->
+  <div class="spotlight" aria-hidden="true"></div>
 
   <!-- ================= HEADER ================= -->
-  <header class="header">
+  <header class="header" id="header">
     <div class="container header__inner">
-      <a href="#inicio" class="logo">alexis<span>.dev</span></a>
-      <nav class="nav">
-        <a href="#proyectos">Proyectos</a>
-        <a href="#servicios">Servicios</a>
-        <a href="#sobre-mi">Sobre mí</a>
+      <a href="#inicio" class="logo"><span class="logo__bracket">&lt;</span>alexis<span class="logo__bracket">/&gt;</span></a>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+
+      <nav class="nav" id="nav">
+        <a href="#proyectos"><span class="nav__num">01.</span> Proyectos</a>
+        <a href="#servicios"><span class="nav__num">02.</span> Servicios</a>
+        <a href="#sobre-mi"><span class="nav__num">03.</span> Sobre mí</a>
         <a href="#contacto" class="nav__cta">Contacto</a>
       </nav>
-      <button class="theme" id="tema" type="button" aria-label="Cambiar tema claro/oscuro">🌓</button>
     </div>
   </header>
 
@@ -37,97 +44,124 @@
 
     <!-- ================= HERO ================= -->
     <section id="inicio" class="hero">
-      <div class="container">
-        <p class="hero__tag">👋 Hola, soy</p>
-        <h1>Alexis Robledo</h1>
-        <p class="hero__role">Desarrollo web y datos · Rosario, Argentina</p>
-        <p class="hero__text">
-          Estudio la Tecnicatura en Programación en la UGR. Hago páginas web para
+      <div class="hero__grid" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <p class="hero__status reveal"><span class="dot"></span> Disponible para proyectos</p>
+        <h1 class="hero__title reveal">
+          <span class="hero__hi">Hola, soy</span>
+          Alexis Robledo
+        </h1>
+        <p class="hero__code reveal" aria-label="while(vivo): aprender()">
+          <span class="prompt">&gt;&gt;&gt;</span>
+          <span id="typed"></span><span class="caret" aria-hidden="true"></span>
+        </p>
+        <p class="hero__text reveal">
+          Desarrollo web y datos desde Rosario, Argentina. Hago páginas para
           comercios, dashboards con datos reales y automatizaciones con Python.
         </p>
-        <div class="hero__actions">
-          <a href="#proyectos" class="btn">Ver proyectos</a>
+        <div class="hero__actions reveal">
+          <a href="#proyectos" class="btn btn--primary">Ver proyectos <span aria-hidden="true">↓</span></a>
           <a href="#contacto" class="btn btn--ghost">Contactarme</a>
         </div>
       </div>
+      <a href="#proyectos" class="scroll-hint" aria-label="Bajar a proyectos"><span></span></a>
     </section>
+
+    <!-- ================= CINTA DE TECNOLOGÍAS ================= -->
+    <div class="marquee" aria-label="Tecnologías: Python, pandas, JavaScript, HTML, CSS, Chart.js, APIs REST, Git, GitHub Pages, Telegram Bots">
+      <div class="marquee__track" aria-hidden="true">
+        <span>Python</span><span>pandas</span><span>JavaScript</span><span>HTML</span><span>CSS</span>
+        <span>Chart.js</span><span>APIs REST</span><span>Git</span><span>GitHub Pages</span><span>Telegram Bots</span>
+        <span>Python</span><span>pandas</span><span>JavaScript</span><span>HTML</span><span>CSS</span>
+        <span>Chart.js</span><span>APIs REST</span><span>Git</span><span>GitHub Pages</span><span>Telegram Bots</span>
+      </div>
+    </div>
 
     <!-- ================= PROYECTOS ================= -->
     <section id="proyectos" class="section">
       <div class="container">
-        <p class="eyebrow">Proyectos</p>
-        <h2>Lo que vengo construyendo</h2>
+        <header class="section__head reveal">
+          <p class="eyebrow"><span>01.</span> Proyectos</p>
+          <h2>Cosas que construí</h2>
+        </header>
 
-        <div class="projects">
-
-          <article class="project">
-            <a class="project__img" href="https://alexisrobledoo.github.io/cotizador-dolar-ar/" target="_blank" rel="noopener">
-              <img src="img/dashboard.jpg" alt="Captura del Dashboard Dólar AR con tarjetas y gráfico de líneas" loading="lazy" width="960" height="600">
-            </a>
-            <div class="project__body">
-              <h3>Dashboard Dólar AR</h3>
-              <p>Página que muestra la evolución de los 7 tipos de dólar con datos que registro cada hora: tarjetas, gráficos interactivos, brecha cambiaria y modo oscuro.</p>
-              <ul class="tags"><li>JavaScript</li><li>Chart.js</li><li>CSV</li><li>GitHub Pages</li></ul>
-              <div class="project__links">
-                <a href="https://alexisrobledoo.github.io/cotizador-dolar-ar/" target="_blank" rel="noopener">Ver online →</a>
-                <a href="https://github.com/AlexisRobledoo/cotizador-dolar-ar" target="_blank" rel="noopener">Código</a>
-              </div>
+        <article class="project reveal">
+          <a class="project__media" href="https://alexisrobledoo.github.io/cotizador-dolar-ar/" target="_blank" rel="noopener">
+            <img src="img/dashboard.jpg" alt="Dashboard Dólar AR: tarjetas con cotizaciones y gráfico de líneas" width="960" height="600" loading="lazy">
+          </a>
+          <div class="project__info">
+            <p class="project__num">01</p>
+            <h3>Dashboard Dólar AR</h3>
+            <p>Página que muestra cómo evolucionan los 7 tipos de dólar en Argentina, con datos que registro yo mismo cada hora. Gráficos interactivos, brecha cambiaria, filtros por período y modo oscuro.</p>
+            <ul class="tags"><li>JavaScript</li><li>Chart.js</li><li>CSV</li><li>GitHub Pages</li></ul>
+            <div class="project__links">
+              <a href="https://alexisrobledoo.github.io/cotizador-dolar-ar/" target="_blank" rel="noopener">Ver online ↗</a>
+              <a href="https://github.com/AlexisRobledoo/cotizador-dolar-ar" target="_blank" rel="noopener">Código ↗</a>
             </div>
-          </article>
+          </div>
+        </article>
 
-          <article class="project">
-            <a class="project__img" href="https://github.com/AlexisRobledoo/cotizador-dolar-ar" target="_blank" rel="noopener">
-              <img src="img/cotizador.jpg" alt="Terminal con las cotizaciones del dólar y chat del bot de Telegram" loading="lazy" width="960" height="600">
-            </a>
-            <div class="project__body">
-              <h3>Cotizador Dólar AR</h3>
-              <p>Script en Python que consulta una API, guarda un histórico en CSV, manda alertas por Telegram cuando un dólar supera un valor y responde consultas con un bot.</p>
-              <ul class="tags"><li>Python</li><li>API REST</li><li>Telegram Bot</li><li>Automatización</li></ul>
-              <div class="project__links">
-                <a href="https://github.com/AlexisRobledoo/cotizador-dolar-ar" target="_blank" rel="noopener">Ver código →</a>
-              </div>
+        <article class="project project--reverse reveal">
+          <a class="project__media" href="https://github.com/AlexisRobledoo/cotizador-dolar-ar" target="_blank" rel="noopener">
+            <img src="img/cotizador.jpg" alt="Terminal con cotizaciones del dólar y chat del bot de Telegram" width="960" height="600" loading="lazy">
+          </a>
+          <div class="project__info">
+            <p class="project__num">02</p>
+            <h3>Cotizador Dólar AR</h3>
+            <p>Script en Python que consulta una API, guarda un histórico en CSV, avisa por Telegram cuando un dólar supera un valor y responde preguntas con un bot. Se ejecuta solo cada hora.</p>
+            <ul class="tags"><li>Python</li><li>API REST</li><li>Telegram Bot</li><li>Automatización</li></ul>
+            <div class="project__links">
+              <a href="https://github.com/AlexisRobledoo/cotizador-dolar-ar" target="_blank" rel="noopener">Ver código ↗</a>
             </div>
-          </article>
+          </div>
+        </article>
 
-          <article class="project">
-            <a class="project__img" href="https://alexisrobledoo.github.io/landing-cafeteria/" target="_blank" rel="noopener">
-              <img src="img/cafeteria.jpg" alt="Landing page de la cafetería Café del Río" loading="lazy" width="960" height="600">
-            </a>
-            <div class="project__body">
-              <h3>Landing para cafetería</h3>
-              <p>Página para un comercio (ficticio): menú con precios, horarios con cartel de "abierto ahora", mapa y pedidos por WhatsApp. Se adapta al celular.</p>
-              <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Responsive</li></ul>
-              <div class="project__links">
-                <a href="https://alexisrobledoo.github.io/landing-cafeteria/" target="_blank" rel="noopener">Ver online →</a>
-                <a href="https://github.com/AlexisRobledoo/landing-cafeteria" target="_blank" rel="noopener">Código</a>
-              </div>
+        <article class="project reveal">
+          <a class="project__media" href="https://alexisrobledoo.github.io/landing-cafeteria/" target="_blank" rel="noopener">
+            <img src="img/cafeteria.jpg" alt="Landing page de la cafetería Café del Río" width="960" height="600" loading="lazy">
+          </a>
+          <div class="project__info">
+            <p class="project__num">03</p>
+            <h3>Landing para cafetería</h3>
+            <p>Página para un comercio (ficticio): menú con precios, cartel de "abierto ahora" calculado en vivo, mapa y pedidos por WhatsApp. Pensada primero para el celular.</p>
+            <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Responsive</li></ul>
+            <div class="project__links">
+              <a href="https://alexisrobledoo.github.io/landing-cafeteria/" target="_blank" rel="noopener">Ver online ↗</a>
+              <a href="https://github.com/AlexisRobledoo/landing-cafeteria" target="_blank" rel="noopener">Código ↗</a>
             </div>
-          </article>
-
-        </div>
+          </div>
+        </article>
       </div>
     </section>
 
     <!-- ================= SERVICIOS ================= -->
-    <section id="servicios" class="section section--alt">
+    <section id="servicios" class="section">
       <div class="container">
-        <p class="eyebrow">Servicios</p>
-        <h2>¿Tenés un comercio o un emprendimiento?</h2>
-        <p class="lead">Te ayudo a estar en internet de forma simple, sin que tengas que tocar nada técnico.</p>
+        <header class="section__head reveal">
+          <p class="eyebrow"><span>02.</span> Servicios</p>
+          <h2>¿Tenés un comercio o emprendimiento?</h2>
+          <p class="lead">Te ayudo a estar en internet de forma simple, sin que tengas que tocar nada técnico.</p>
+        </header>
 
         <div class="services">
-          <article class="service">
-            <span class="service__icon" aria-hidden="true">🖥️</span>
+          <article class="service glow reveal">
+            <span class="service__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            </span>
             <h3>Página web</h3>
             <p>Una página rápida y prolija para tu negocio: qué hacés, tus productos, horarios, ubicación y un botón para que te escriban.</p>
           </article>
-          <article class="service">
-            <span class="service__icon" aria-hidden="true">🔄</span>
+          <article class="service glow reveal">
+            <span class="service__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v5h-5"/></svg>
+            </span>
             <h3>Mantenimiento mensual</h3>
             <p>Me encargo de mantenerla al día: precios, menú, horarios y avisos. Vos me escribís y yo lo cambio.</p>
           </article>
-          <article class="service">
-            <span class="service__icon" aria-hidden="true">📊</span>
+          <article class="service glow reveal">
+            <span class="service__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
+            </span>
             <h3>Datos y automatizaciones</h3>
             <p>Tableros con tus números, alertas automáticas y bots de Telegram para dejar de hacer a mano tareas repetitivas.</p>
           </article>
@@ -138,8 +172,8 @@
     <!-- ================= SOBRE MÍ ================= -->
     <section id="sobre-mi" class="section">
       <div class="container about">
-        <div>
-          <p class="eyebrow">Sobre mí</p>
+        <div class="reveal">
+          <p class="eyebrow"><span>03.</span> Sobre mí</p>
           <h2>Aprendo construyendo</h2>
           <p>
             Arranqué la Tecnicatura en Programación en la Universidad del Gran Rosario
@@ -150,31 +184,51 @@
             Me interesan el desarrollo web y la ciencia de datos: tomar información,
             ordenarla y convertirla en algo útil y fácil de entender.
           </p>
+          <ul class="stats">
+            <li><strong data-count="3">0</strong><span>proyectos online</span></li>
+            <li><strong data-count="7">0</strong><span>tipos de dólar monitoreados</span></li>
+            <li><strong data-count="120" data-suffix="+">0</strong><span>mediciones de datos reales</span></li>
+          </ul>
         </div>
 
-        <div class="skills">
-          <h3>Tecnologías que uso</h3>
-          <ul class="tags tags--lg">
-            <li>Python</li><li>pandas</li><li>HTML</li><li>CSS</li><li>JavaScript</li>
-            <li>Chart.js</li><li>APIs REST</li><li>Git</li><li>GitHub</li><li>VS Code</li>
-          </ul>
-          <h3>Ahora estoy aprendiendo</h3>
-          <ul class="tags tags--lg tags--soft">
-            <li>Ciencia de datos</li><li>Machine learning</li><li>Estadística</li>
-          </ul>
+        <div class="terminal reveal" aria-label="Tecnologías que uso y lo que estoy aprendiendo">
+          <div class="terminal__bar"><span></span><span></span><span></span><p>alexis.py</p></div>
+<pre class="terminal__body"><code><span class="k">class</span> <span class="f">Alexis</span>:
+    ciudad = <span class="s">"Rosario, AR"</span>
+    estudia = <span class="s">"Tecnicatura en Programación"</span>
+
+    uso = [
+        <span class="s">"Python"</span>, <span class="s">"pandas"</span>, <span class="s">"JavaScript"</span>,
+        <span class="s">"HTML"</span>, <span class="s">"CSS"</span>, <span class="s">"Chart.js"</span>,
+        <span class="s">"APIs REST"</span>, <span class="s">"Git"</span>,
+    ]
+
+    aprendiendo = [
+        <span class="s">"Ciencia de datos"</span>,
+        <span class="s">"Machine learning"</span>,
+    ]
+
+    <span class="k">def</span> <span class="f">disponible</span>(self):
+        <span class="k">return</span> <span class="b">True</span></code></pre>
         </div>
       </div>
     </section>
 
     <!-- ================= CONTACTO ================= -->
     <section id="contacto" class="section contact">
-      <div class="container">
-        <h2>Hablemos</h2>
-        <p class="lead">¿Tenés una idea, un negocio o una propuesta? Escribime.</p>
-        <div class="contact__links">
-          <a class="btn" href="mailto:alexisdanielrobledo@gmail.com">✉️ alexisdanielrobledo@gmail.com</a>
-          <a class="btn btn--ghost" href="https://linkedin.com/in/alexis-daniel-robledo" target="_blank" rel="noopener">LinkedIn</a>
-          <a class="btn btn--ghost" href="https://github.com/AlexisRobledoo" target="_blank" rel="noopener">GitHub</a>
+      <div class="container reveal">
+        <p class="eyebrow eyebrow--center"><span>04.</span> Contacto</p>
+        <h2 class="contact__title">Hablemos</h2>
+        <p class="lead lead--center">¿Tenés una idea, un negocio o una propuesta? Escribime y te respondo.</p>
+
+        <div class="contact__mail">
+          <a class="btn btn--primary btn--lg" href="mailto:alexisdanielrobledo@gmail.com">alexisdanielrobledo@gmail.com</a>
+          <button class="btn btn--ghost" id="copiar" type="button">Copiar mail</button>
+        </div>
+
+        <div class="contact__social">
+          <a href="https://linkedin.com/in/alexis-daniel-robledo" target="_blank" rel="noopener">LinkedIn ↗</a>
+          <a href="https://github.com/AlexisRobledoo" target="_blank" rel="noopener">GitHub ↗</a>
         </div>
       </div>
     </section>
@@ -182,10 +236,14 @@
   </main>
 
   <footer class="footer">
-    <div class="container">
-      <p>© <span id="anio">2026</span> Alexis Robledo · Hecho con HTML, CSS y JavaScript</p>
+    <div class="container footer__inner">
+      <p>© <span id="anio">2026</span> Alexis Robledo</p>
+      <p class="mono">while(vivo): aprender()</p>
     </div>
   </footer>
+
+  <!-- Aviso flotante ("Mail copiado") -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
   <script src="js/main.js"></script>
 </body>
