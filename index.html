@@ -68,11 +68,11 @@
     </section>
 
     <!-- ================= CINTA DE TECNOLOGÍAS ================= -->
-    <div class="marquee" aria-label="Tecnologías: Python, pandas, JavaScript, HTML, CSS, Chart.js, APIs REST, Git, GitHub Pages, Telegram Bots">
+    <div class="marquee" aria-label="Tecnologías: Python, pandas, scikit-learn, Streamlit, JavaScript, HTML, CSS, Chart.js, APIs REST, Git, GitHub Pages, Telegram Bots">
       <div class="marquee__track" aria-hidden="true">
-        <span>Python</span><span>pandas</span><span>JavaScript</span><span>HTML</span><span>CSS</span>
+        <span>Python</span><span>pandas</span><span>scikit-learn</span><span>Streamlit</span><span>JavaScript</span><span>HTML</span><span>CSS</span>
         <span>Chart.js</span><span>APIs REST</span><span>Git</span><span>GitHub Pages</span><span>Telegram Bots</span>
-        <span>Python</span><span>pandas</span><span>JavaScript</span><span>HTML</span><span>CSS</span>
+        <span>Python</span><span>pandas</span><span>scikit-learn</span><span>Streamlit</span><span>JavaScript</span><span>HTML</span><span>CSS</span>
         <span>Chart.js</span><span>APIs REST</span><span>Git</span><span>GitHub Pages</span><span>Telegram Bots</span>
       </div>
     </div>
@@ -86,11 +86,27 @@
         </header>
 
         <article class="project reveal">
+          <a class="project__media" href="https://predictor-combustible-ar.streamlit.app/" target="_blank" rel="noopener">
+            <img src="img/combustible.jpg" alt="App Predictor de precios de combustible con el precio estimado para Rosario" width="960" height="600" loading="lazy">
+          </a>
+          <div class="project__info">
+            <p class="project__num">01</p>
+            <h3>Predictor de combustible</h3>
+            <p>App de Machine Learning que estima el precio del combustible según provincia, localidad y marca, entrenada con más de 3.000 precios oficiales. Comparé 4 modelos: el mejor se equivoca 56% menos que la línea base.</p>
+            <ul class="tags"><li>Python</li><li>scikit-learn</li><li>pandas</li><li>Streamlit</li></ul>
+            <div class="project__links">
+              <a href="https://predictor-combustible-ar.streamlit.app/" target="_blank" rel="noopener">Probar app ↗</a>
+              <a href="https://github.com/AlexisRobledoo/predictor-combustible" target="_blank" rel="noopener">Código ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project project--reverse reveal">
           <a class="project__media" href="https://alexisrobledoo.github.io/cotizador-dolar-ar/" target="_blank" rel="noopener">
             <img src="img/dashboard.jpg" alt="Dashboard Dólar AR: tarjetas con cotizaciones y gráfico de líneas" width="960" height="600" loading="lazy">
           </a>
           <div class="project__info">
-            <p class="project__num">01</p>
+            <p class="project__num">02</p>
             <h3>Dashboard Dólar AR</h3>
             <p>Página que muestra cómo evolucionan los 7 tipos de dólar en Argentina, con datos que registro yo mismo cada hora. Gráficos interactivos, brecha cambiaria, filtros por período y modo oscuro.</p>
             <ul class="tags"><li>JavaScript</li><li>Chart.js</li><li>CSV</li><li>GitHub Pages</li></ul>
@@ -101,12 +117,12 @@
           </div>
         </article>
 
-        <article class="project project--reverse reveal">
+        <article class="project reveal">
           <a class="project__media" href="https://github.com/AlexisRobledoo/cotizador-dolar-ar" target="_blank" rel="noopener">
             <img src="img/cotizador.jpg" alt="Terminal con cotizaciones del dólar y chat del bot de Telegram" width="960" height="600" loading="lazy">
           </a>
           <div class="project__info">
-            <p class="project__num">02</p>
+            <p class="project__num">03</p>
             <h3>Cotizador Dólar AR</h3>
             <p>Script en Python que consulta una API, guarda un histórico en CSV, avisa por Telegram cuando un dólar supera un valor y responde preguntas con un bot. Se ejecuta solo cada hora.</p>
             <ul class="tags"><li>Python</li><li>API REST</li><li>Telegram Bot</li><li>Automatización</li></ul>
@@ -116,12 +132,12 @@
           </div>
         </article>
 
-        <article class="project reveal">
+        <article class="project project--reverse reveal">
           <a class="project__media" href="https://alexisrobledoo.github.io/landing-cafeteria/" target="_blank" rel="noopener">
             <img src="img/cafeteria.jpg" alt="Landing page de la cafetería Café del Río" width="960" height="600" loading="lazy">
           </a>
           <div class="project__info">
-            <p class="project__num">03</p>
+            <p class="project__num">04</p>
             <h3>Landing para cafetería</h3>
             <p>Página para un comercio (ficticio): menú con precios, cartel de "abierto ahora" calculado en vivo, mapa y pedidos por WhatsApp. Pensada primero para el celular.</p>
             <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Responsive</li></ul>
@@ -185,7 +201,7 @@
             ordenarla y convertirla en algo útil y fácil de entender.
           </p>
           <ul class="stats">
-            <li><strong data-count="3">0</strong><span>proyectos online</span></li>
+            <li><strong data-count="4">0</strong><span>proyectos online</span></li>
             <li><strong data-count="7">0</strong><span>tipos de dólar monitoreados</span></li>
             <li><strong data-count="120" data-suffix="+">0</strong><span>mediciones de datos reales</span></li>
           </ul>
@@ -198,14 +214,15 @@
     estudia = <span class="s">"Tecnicatura en Programación"</span>
 
     uso = [
-        <span class="s">"Python"</span>, <span class="s">"pandas"</span>, <span class="s">"JavaScript"</span>,
+        <span class="s">"Python"</span>, <span class="s">"pandas"</span>, <span class="s">"scikit-learn"</span>,
+        <span class="s">"Streamlit"</span>, <span class="s">"JavaScript"</span>,
         <span class="s">"HTML"</span>, <span class="s">"CSS"</span>, <span class="s">"Chart.js"</span>,
         <span class="s">"APIs REST"</span>, <span class="s">"Git"</span>,
     ]
 
     aprendiendo = [
         <span class="s">"Ciencia de datos"</span>,
-        <span class="s">"Machine learning"</span>,
+        <span class="s">"Deep learning"</span>,
     ]
 
     <span class="k">def</span> <span class="f">disponible</span>(self):
