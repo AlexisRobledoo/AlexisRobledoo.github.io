@@ -20,8 +20,8 @@ HTML · CSS · JavaScript · Python · pandas · Chart.js · Git · GitHub Pages
 
 ```
 ├── index.html      → contenido
-├── css/styles.css  → diseño (modo claro y oscuro)
-├── js/main.js      → botón de tema y año automático
+├── css/styles.css  → diseño y animaciones
+├── js/main.js      → efectos (texto que se escribe, scroll, 3D, menú)
 └── img/            → capturas de los proyectos
 ```
 
